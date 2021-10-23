@@ -11,6 +11,9 @@ $email=filter_input(INPUT_POST,"email");
 $userpattern="/^[a-zA-Z]+$/i";
 $mobilepattern = "/^[0-9]{10}$/i";
 $regnopattern = "/^[0-9]{7}$/i";
+$emailpattern = "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i";
+
+$flag=0;
 
 if(preg_match($userpattern,$username)==0){
     echo "\n Name is not valid";
@@ -21,11 +24,12 @@ elseif (preg_match($mobilepattern,$mobile)==0) {
 elseif (preg_match($regnopattern,$regno)==0) {
     echo "\n Regno is invalid";
 }
-elseif (preg_match($mobilepattern,$mobile)==0) {
-    echo "\n Mobile is invalid";
+elseif (preg_match($emailpattern,$email)==0) {
+    echo "\n email is invalid";
 }
 
 else{
+    $flag=0;
     $query="INSERT INTO user Values('$username','$mobile','$email','$password','$regno')";
     mysqli_query($db,$query);
 }
@@ -40,6 +44,9 @@ else{
 </head>
 <body>
     
-<?php echo "You have successfully registered"; ?>
+<?php if($flag){echo "\nYou have successfully registered";}
+else{
+    echo "\nTry again";
+} ?>
 </body>
 </html>
