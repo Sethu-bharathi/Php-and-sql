@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight:600;
+}
+.background{
+    background-image: linear-gradient(to right,#6551AA,#252525);
+    height: 100vh;
+    width:100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.nextdiv{
+    border:none;
+    height:70%;
+    width:70%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+.image{
+    display:flex;
+    justify-content: center;
+    border-radius: 10px 0 0 10px;
+    width: 45%;
+    background-color: #6551AA;
+}
+.image>img{
+    margin: auto;
+    height:300px;
+    width:300px;
+}
+.signupform{
+    width: 50%;
+    border-radius: 0 10px 10px 0;
+    background-color: white;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left:35px;
+}
+.signupform > input{
+    border:none;
+    border-bottom: black solid 2px;
+    width:80%;
+    height:30px;
+
+}
+.signupform > input:focus{
+    outline: none;
+}
+.signupform > p{
+    margin-top: 15px;
+    text-align: right;
+}
+.signupform > button{
+    position: relative;
+    right:20px;
+    border: none;
+    outline: none;
+    padding:5px;
+    margin:15px auto ;
+    width:80px;
+    border-radius: 5px;
+    height: 40px;
+    background-color:#6551AA;
+    color:white;
+}
+
+@media (max-width:981px) {
+    .image{ width:0;
+    display:none;}
+    .signupform{
+        width:100%;
+        border-radius: 10px;;
+    }
+}
